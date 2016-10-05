@@ -1,5 +1,5 @@
 /*
- * Lab 3
+ * Lab 3; This file runs the link list
  * 
  * Jennifer Herasymuik   SID:200352062
  * 
@@ -9,7 +9,13 @@
 public class List {
 
 	public static void main(String[] args) {
-		System.
+		System.out.println("This program allows you to amnipulate a linked list.");
+		System.out.println("Select one of the options below:");
+		System.out.println("a) Add Node");
+		System.out.println("b) Find Node");
+		System.out.println("c) Delete a Node");
+		System.out.println("d) Print from end of list");
+		System.out.println("e) Print from start of list");
 
 	}
 
