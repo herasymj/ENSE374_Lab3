@@ -16,7 +16,7 @@ public class List {
 		int selection = 1;
 		
 		//list element that represents head of linked list
-		ListElement head = new ListElement();
+		DoubleLinkedList list = new DoubleLinkedList();
 		
 		//scanner so we can input values for the selection char
 		Scanner in = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class List {
 		System.out.println("1: Add Node");
 		System.out.println("2: Find Node");
 		System.out.println("3: Delete a Node");
-		//System.out.println("4: Print from end of list");
+		System.out.println("4: Print from end of list");
 		System.out.println("5: Print from start of list");
 		System.out.println("0: Quit program");
 		System.out.println("Selection: ");
@@ -38,27 +38,29 @@ public class List {
 			int num = in.nextInt();
 			ListElement newElement = new ListElement();
 			newElement.setData(num);
-			head.addElement(newElement);
+			list.addElement(newElement);
 			
 		}
 		else if(selection == 2){
 			System.out.println("Search to see if value is in list: ");
 			int num = in.nextInt();
-			if (head.getElement(num) != null){
+			if (list.getElement(num) != null){
 				System.out.println("Element was in list!");
 			}
 		}
 		else if(selection == 3){
 			System.out.println("Enter number to be deleted: ");
 			int num = in.nextInt();
-			head = head.deleteElement(num);
-			if(head != null){
+			list.head = list.deleteElement(num);
+			if(list.head != null){
 				System.out.println("Item deleted...");
 			}
 		}
-		//else if(selection == 4){}
+		else if(selection == 4){
+			list.printFromTail();
+		}
 		else if(selection == 5){
-			head.print();
+			list.printFromHead();
 		}
 		else{
 			System.out.println("Please enter one of the letter values show in list...");
